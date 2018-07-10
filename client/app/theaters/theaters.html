@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8 jumbotron">
+            <center>
+                <h4> Add Theaters Here </h4>
+            </center>
+            <form >
+            <div class="form-group">
+                <input type="text" ng-model="theatersCtrl.Name" placeholder="Theater Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="theatersCtrl.City" placeholder="City" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="theatersCtrl.Location" placeholder="Location" class="form-control" required>
+            </div>
+           
+
+            <div class="form-group">
+                <button type="submit"  ng-click="theatersCtrl.AddTheater()" class="btn btn-success"> Add Theater </button>
+            </div>
+        </form>
+
+
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                
+                    <table class="table">
+                        <tr>
+                            <th>Theater</th>
+                            <th> City </th>
+                            <th> Location </th>
+                            <th> Delete </th>
+                        </tr>
+
+                        <tr ng-repeat="t in theatersCtrl.Theaters">
+                            <td>{{t.Name}}</td>
+                            <td>{{t.City}}</td>
+                            <td>{{t.Location}}</td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="theatersCtrl.RemoveTheater(t)">x</button>
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+
+               
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>

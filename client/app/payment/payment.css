@@ -1,0 +1,82 @@
+
+.debitCard{
+    background-image: url("/app/payment/card.png");
+    width: 420px;
+    height: 300px;
+    
+}
+.debitCard .cardDetails{
+    padding-top: 30%;
+    padding-right:15px;
+    padding-right:12px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.debitCard h3{
+    color: brown;
+    font-family: sans-serif;
+    text-align: center;
+}
+.debitCard #cardNumber{
+    color: white;
+    
+}
+.debitCard #expiry{
+    color: white;
+    float: right;
+    font-weight: bold;
+}
+.debitCard th{
+    color: white;
+
+}
+
+
+
+/* .card {
+    background-image: url("/app/payment/card.png");
+
+
+    width: 420px;
+    height: 300px;
+}
+
+.card h3 {
+
+    margin-top: 18%;
+    padding-left: 55%;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.cardNumber {
+    margin-top: 16%;
+    align-self: center;
+    color: white;
+}
+
+.cardNumber #cardNumber {
+    font-size: 12px;
+}
+
+.cardNumber #validity {
+    float: right;
+}
+
+.cardNumber #cardholder {
+    margin-top: -4px;
+}
+
+.cardNumber table {
+    height: 30px;
+    width: 300px;
+}
+
+
+.paymentDetails{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: brown;
+} */

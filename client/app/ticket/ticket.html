@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 well">
+            
+                <h5>Thank You for purchase</h5>
+           
+
+        </div>
+    </div>
+
+    <div class="row ">
+        <div style="border: 2px solid black" class="col-md-8 well">
+            <table>
+                <tr>
+                    <th style="width:30%"></th>
+                    <th style="width:15%"></th>
+                    <th style="width:20%"></th>
+                    <th style="width:35%"></th>
+                </tr>
+              
+                <tr>
+                        <td rowspan="6"  > <center>
+                            <div ng-repeat="m in ticketCtrl.mymovies |filter:ticketCtrl.movieName">
+                            <img style="height:200px;width:150px" src="http://image.tmdb.org/t/p/w500{{m.Poster}}" alt="{{ticketCtrl.name}}">
+                        </center>
+                    </div>
+                        </td>
+
+                    <td> <b>{{ticketCtrl.movieName}}</b> 
+                       </td>
+                    <td></td>
+                    <td rowspan="3">
+                        
+                        <center>
+                                <p>Booking ID: 66468468</p>
+                            <img src='https://www.kdab.com/wp-content/uploads/stories/kdab_qr.png' alt='Barcode Generator TEC-IT' height="80px" width="80px"/>
+                        </center>
+                    </td>
+                    
+                    
+                   
+                </tr>
+                <tr>
+                        <td colspan="2">{{ticketCtrl.theater}}</td>
+                        
+                    
+                   
+                </tr>
+                <tr>
+                   
+                    <td>
+                        <b>Date</b> <br>
+                        {{ticketCtrl.date}} &nbsp;
+                    </td>
+                    <td>
+                       <b>Time</b> <br> {{ticketCtrl.time}}
+                    </td>
+                    
+                    
+                    
+                   
+                </tr>
+                <tr>
+                    <td> Quantity</td>
+                    <td>{{ticketCtrl.ticket}}</td>
+                    <td></td>
+                    
+                    
+                   
+                </tr>
+                <tr>
+                    <td> Class : {{ticketCtrl.class}}</td>
+                    <td colspan="2"> {{ticketCtrl.SeatNumbers}} </td>
+                   
+                    
+                    
+                    
+                </tr>
+                <tr>
+                    <td> <u> Amount Paid</u></td>
+                    <td> <b> {{ticketCtrl.total}} </b> </td>
+                    <td></td>
+                    
+                   
+                    
+                </tr>
+            </table>
+        </div>
+       
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>   
+</div>

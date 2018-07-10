@@ -1,0 +1,115 @@
+<div class="container">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="app/main/race3.jpg" alt="Race 3" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="app/main/veere-di-wedding.jpg" alt="Veere Di Wedding " style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="app/main/kaala.jpg" alt="Kaala" style="width:100%;">
+      </div>
+      <div class="item">
+        <img src="app/main/Parmanu.jpg" alt="Parmanu" style="width:100%;">
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+ 
+  <div class="row">
+    <center>
+      <h5 id="Showing"> Now Showing </h5>
+    </center>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="movies col-md-2 col-sm-3 col-xs-10" ng-repeat="s in mainCtrl.ShowingMovies">
+      <div ng-repeat="m in mainCtrl.mymovies | filter: s.MovieTitle">
+        <center>
+          <img src="http://image.tmdb.org/t/p/w500{{m.Poster}}" class="MoviePoster" alt="Poster">
+        </center>
+      </div>
+      <b>{{s.MovieTitle}}
+      </b>
+      <div ng-repeat="m in mainCtrl.mymovies | filter: s.MovieTitle">
+        <span id="genre" ng-repeat="g in m.Genres">{{g.name}} </span>
+      </div>
+      <div>
+        <button class="btn btn-danger btn-block" data-toggle='modal' data-target='#exampleModal' ng-click="mainCtrl.bookMovie(s,m)">Book</button>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Booking Options </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <label for="City">Choose City :</label>
+              <select class="form-control" ng-model="mainCtrl.city">
+                <option ng-repeat="s in mainCtrl.ShowingMovies | filter: mainCtrl.selectedMovie" value=" {{s.City}}"> {{s.City}}</option>
+              </select>
+              <label for="theater">Select Theater :</label>
+              <select class="form-control" ng-model="mainCtrl.theater" ng-repeat="s in mainCtrl.ShowingMovies | filter : mainCtrl.city | filter: mainCtrl.selectedMovie">
+                <option ng-repeat="t in s.Theater" value="{{t}}"> {{t}} </option>
+              </select>
+              <label for="date">Select Date :</label>
+              <select class="form-control" ng-model="mainCtrl.selectedDate" ng-repeat="s in mainCtrl.ShowingMovies | filter : mainCtrl.city | filter: mainCtrl.selectedMovie">
+                <option ng-repeat="d in s.ShowDate" value="{{d}}"> {{d}} </option>
+              </select>
+              <label for="time">Select Time :</label>
+              <select class="form-control" ng-model="mainCtrl.Time" ng-repeat="s in mainCtrl.ShowingMovies | filter : mainCtrl.city | filter: mainCtrl.selectedMovie | filter: mainCtrl.selectedDate">
+                <option ng-repeat="time in s.ShowTime" value="{{time}}"> {{time}} </option>
+              </select>
+              <label for="class">Select Class :</label>
+              <select id="class" ng-model="mainCtrl.class" class="form-control">
+                <option value="Gold">Gold</option>
+                <option value="Silver">Silver</option>
+              </select>
+              <select id="tName" ng-model="mainCtrl.Theater" class="HideData">
+                <option value="{{mainCtrl.theater}}">{{mainCtrl.theater}}</option>
+              </select>
+              <label for="time"></label>
+              <select id="tDate" ng-model="mainCtrl.Theater" class="HideData">
+                <option value="{{mainCtrl.selectedDate}}">{{mainCtrl.selectedDate}}</option>
+              </select>
+              <select id="tTime" ng-model="mainCtrl.Theater" class="HideData">
+                <option value="{{mainCtrl.Time}}">{{mainCtrl.Time}}</option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" ng-click="mainCtrl.book()">Select</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

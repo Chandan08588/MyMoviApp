@@ -1,0 +1,302 @@
+<div class="container">
+        <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-5 payment well">
+                        <form action="/ticket">
+                                <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <input type="text" class="form-control" name="fname"  ng-model="paymentCtrl.name" maxlength="30" placeholder="John" required>
+                                </div>
+                               
+                                <div class="form-group">
+                                        <label for="Name">Contact</label>
+                                        <input type="text" class="form-control" name="Contact" ng-model="paymentCtrl.contact" maxlength="10" attern="[0-9]{10}" title="Must Enter a valid phone mobile number" placeholder="990000000">
+                                </div>
+                                <h3>Enter Your Card Details</h3>
+
+                                <div class="debitCard">
+                                        <div class="cardDetails">
+                                                <table>
+                                                        <tr>
+
+                                                                <td id="cardNumber" colspan="2"> Card Number</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                        </tr>
+                                                        <tr>
+
+                                                                <td>
+                                                                        <input type="text" class="form-control form-control-sm" placeholder="1234" maxlength="4" required>
+                                                                </td>
+                                                                <td>
+                                                                        <input type="text" class="form-control form-control-sm" placeholder="1234" maxlength="4" required>
+                                                                </td>
+                                                                <td>
+                                                                        <input type="text" class="form-control form-control-sm" placeholder="1234" maxlength="4" required>
+                                                                </td>
+                                                                <td>
+                                                                        <input type="text" class="form-control form-control-sm" placeholder="1234" maxlength="4" required>
+                                                                </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td id="expiry">
+                                                                        <p>Expiry</p>
+                                                                </td>
+
+                                                                <td>
+                                                                        <div class="form-group">
+                                                                                <select name="">
+                                                                        <option  class="form-control" aria-placeholder="mm">Month</option>
+                                                                        <option value="" class="form-control">01</option>
+                                                                        <option value="" class="form-control">02</option>
+                                                                        <option value="" class="form-control">03</option>
+                                                                        <option value="" class="form-control">04</option>
+                                                                        <option value="" class="form-control">05</option>
+                                                                        <option value="" class="form-control">06</option>
+                                                                        <option value="" class="form-control">07</option>
+                                                                        <option value="" class="form-control">08</option>
+                                                                        <option value="" class="form-control">09</option>
+                                                                        <option value="" class="form-control">10</option>
+                                                                        <option value="" class="form-control">11</option>
+                                                                        <option value="" class="form-control">12</option>
+                                                                </select>
+                                                                        </div>
+                                                                </td>
+                                                                <td>
+                                                                        <div class="form-group">
+                                                                                <select name="" >
+                                                                <option  class="form-control" aria-placeholder="yy">Year</option>
+                                                                <option value="" class="form-control">2019</option>
+                                                                <option value="" class="form-control">2020</option>
+                                                                <option value="" class="form-control">2021</option>
+                                                                <option value="" class="form-control">2022</option>
+                                                                <option value="" class="form-control">2023</option>
+                                                                <option value="" class="form-control">2024</option>
+                                                                <option value="" class="form-control">2025</option>
+                                                                <option value="" class="form-control">2026</option>
+                                                                <option value="" class="form-control">2027</option>
+                                                                <option value="" class="form-control">2028</option>
+                                                                <option value="" class="form-control">2029</option>
+                                                                <option value="" class="form-control">2030</option>
+                                                        </select>
+                                                                        </div>
+                                                                </td>
+
+                                                                <td>
+                                                                        <input type="password" class="form-control form-control-sm" placeholder="cvv" maxlength="3" required>
+                                                                </td>
+                                                        </tr>
+
+                                                        <tr>
+
+                                                                <td colspan="3">
+                                                                        <input type="text" class="form-control form-control-sm" placeholder="card holder" required>
+                                                                </td>
+                                                        </tr>
+                                                </table>
+                                        </div>
+
+                                </div>
+                                <div>
+                                       
+                                        <input type="submit" value="Make Payment" ng-click="paymentCtrl.payment()" class="btn btn-primary btn-lg btn-block">
+                                </div>
+                        </form>
+                </div>
+                
+
+
+                <div class="col-md-3">
+                        <div class="well">
+                                <table class="table">
+                                        <tr>
+                                                <th colspan="2">
+                                                        <center>Order Summary</center>
+                                                </th>
+
+                                        </tr>
+                                        <tr>
+                                                <td > Movi Name</td>
+                                                <td> {{paymentCtrl.movieName}} </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td> Theatre Name</td>
+                                                <td> {{paymentCtrl.theater}} </td>
+                                        </tr>
+                                        <tr>
+                                                <td> Number of Tickets</td>
+                                                <td>{{paymentCtrl.ticket}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Sub Total</td>
+                                                <td>{{paymentCtrl.subCharges}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Internet Handling Fees</td>
+                                                <td>{{paymentCtrl.internetHandling}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Amount Payble</td>
+                                                <td>{{paymentCtrl.total}}</td>
+                                        </tr>
+                                </table>
+                        </div>
+                </div>
+                <div class="col-md-1"></div>
+
+        </div>
+
+</div>
+
+
+<!-- 
+
+<div class="container-fluid">
+        <div class="row">
+                <div class="col-md-4">
+
+
+
+                </div>
+                <div class="col-md-4">
+                        <form action="#">
+                                <table class="booking">
+                                        <tr class="details">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text">Name &nbsp;</span>
+                                                        </div>
+                                                        <input type="text" class="form-control  form-control-sm" placeholder="Peter Parker" required>
+                                                </div>
+                                        </tr>
+                                        <tr class="details">
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text">e-mail &nbsp;</span>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-sm" placeholder="abc@example.com" required>
+                                                </div>
+                                        </tr>
+                                        <tr>
+                                                <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text">Contact</span>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-sm" placeholder="9900000000" maxlength="10" required>
+                                                </div>
+                                        </tr>
+                                </table>
+
+
+
+                                <div class="card">
+                                        <h3>Bank name</h3>
+                                        <div class="cardNumber">
+
+                                                <table>
+                                                        <tr>
+                                                                <td colspan="2" id="cardNumber"> Card Number </td>
+                                                                <td>
+
+                                                                </td>
+                                                                <td></td>
+                                                        </tr>
+                                                        <tr>
+
+
+                                                                <td>
+                                                                        <input type="text" maxlength="4" class="form-control form-control-sm" placeholder="1234" required>
+
+                                                                </td>
+                                                                <td>
+                                                                        <input type="text" maxlength="4" class="form-control form-control-sm" placeholder="1234" required>
+
+                                                                </td>
+                                                                <td>
+                                                                        <input type="text" maxlength="4" class="form-control form-control-sm" placeholder="1234" required>
+                                                                </td>
+                                                                <td>
+                                                                        <input type="text" maxlength="4" class="form-control form-control-sm" placeholder="1234" required>
+                                                                </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td id="validity"> Expiry</td>
+                                                                <td>
+                                                                        <div class="form-group">
+                                                                                <select name="" id="Month" required>
+                                                                    <option  class="form-control" aria-placeholder="mm">mm</option>
+                                                                    <option value="" class="form-control">01</option>
+                                                                    <option value="" class="form-control">02</option>
+                                                                    <option value="" class="form-control">03</option>
+                                                                    <option value="" class="form-control">04</option>
+                                                                    <option value="" class="form-control">05</option>
+                                                                    <option value="" class="form-control">06</option>
+                                                                    <option value="" class="form-control">07</option>
+                                                                    <option value="" class="form-control">08</option>
+                                                                    <option value="" class="form-control">09</option>
+                                                                    <option value="" class="form-control">10</option>
+                                                                    <option value="" class="form-control">11</option>
+                                                                    <option value="" class="form-control">12</option>
+                                                            </select>
+                                                                        </div>
+                                                                </td>
+
+
+                                                                <td>
+                                                                        <div class="form-group">
+                                                                                <select name="" id="Year" required>
+                                                                            <option  class="form-control">yy</option>
+                                                                            <option value="19" class="form-control" >19</option>
+                                                                            <option value="20" class="form-control">20</option>
+                                                                            <option value="21" class="form-control">21</option>
+                                                                            <option value="22" class="form-control">22</option>
+                                                                            <option value="23" class="form-control">23</option>
+                                                                            <option value="24" class="form-control">24</option>
+                                                                            <option value="25" class="form-control">25</option>
+                                                                            <option value="26" class="form-control">26</option>
+                                                                            <option value="27" class="form-control">27</option>
+                                                                            <option value="28" class="form-control">28</option>
+                                                                            <option value="29" class="form-control">29</option>
+                                                                            <option value="30" class="form-control">30</option>
+
+                                                                    </select>
+                                                                        </div>
+                                                                </td>
+
+                                                                <td>
+                                                                        <div class="form-group">
+                                                                                <input type="text" class="form-control form-control-sm" placeholder="cvv" maxlength="3" required>
+                                                                        </div>
+                                                                </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td colspan="2" id="cardHolder">
+                                                                        <input type="text" class="form-control form-control-sm" maxlength="20" placeholder="Card Holder" id="cardHolder" required>
+                                                                </td>
+                                                                <td></td>
+                                                                <td></td>
+                                                        </tr>
+
+                                                </table>
+
+                                        </div>
+
+                                </div>
+                                <div>
+                                        <input type="submit" value="Pay now" class="btn btn-primary btn-lg btn-block">
+                                </div>
+                        </form>
+
+
+                </div>
+
+                <div class="col-md-4">
+                        <div>
+                                <i class="far fa-user"></i>
+                        </div>
+                </div>
+        </div>
+
+</div> -->

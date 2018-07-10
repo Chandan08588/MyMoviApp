@@ -1,0 +1,230 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <center>
+        <h4>Mapp Movie Here</h4>
+      </center>
+      <table class="table">
+        <tr>
+          <th>Select Movie</th>
+          <th>Select City</th>
+          <th>Select Theater</th>
+          <th>Select Date</th>
+          <th>Select Time</th>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-control" ng-model="moviemapingCtrl.movie">
+              <option></option>
+              <option ng-repeat="m in moviemapingCtrl.mymovies">{{m.Title}}</option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control" ng-model="moviemapingCtrl.city">
+              <option></option>
+              <option ng-repeat="t in moviemapingCtrl.Theaters ">{{t.City}}</option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control" id="theater" ng-model="moviemapingCtrl.theaters">
+              <option></option>
+              <option ng-repeat="t in moviemapingCtrl.Theaters | filter:moviemapingCtrl.city">{{t.Name}} : {{t.Location}} </option>
+            </select>
+            <button id="addtheater" class="btn btn-primary">Add Theater</button>&nbsp;&nbsp;
+          </td>
+          <td>
+            <select class="form-control" id="days" ng-model="day">
+              <option></option>
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="8">08</option>
+              <option value="9">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="17">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <select class="form-control" id="months" ng-model="month">
+              <option></option>
+              <option value="JAN">JAN</option>
+              <option value="FEB">FEB</option>
+              <option value="MAR">MAR</option>
+              <option value="APR">APR</option>
+              <option value="MAY">MAY</option>
+              <option value="JUN">JUN</option>
+              <option value="JUL">JUL</option>
+              <option value="AUG">AUG</option>
+              <option value="SEP">SEP</option>
+              <option value="OCT">OCT</option>
+              <option value="NOV">NOV</option>
+              <option value="DEC">DEC</option>
+            </select>
+            <select class="form-control" id="years" ng-model="year">
+              <option></option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+            </select>
+            <button id="adddate" class="btn btn-primary" ng-click="moviemapingCtrl.addDate()">Add Show Date</button>&nbsp;&nbsp;
+          </td>
+          <td>
+            <select class="form-control" id="hours" ng-model="hour">
+              <option></option>
+              <option value="12">12</option>
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="8">08</option>
+              <option value="9">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+            </select>
+            <select class="form-control" id="minutes" ng-model="minute">
+              <option></option>
+              <option value="00">00</option>
+              <option value="05">05</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+              <option value="55">55</option>
+            </select>
+            <select class="form-control" id="ampm" ng-model="ap">
+              <option></option>
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+            <button id="addtime" class="btn btn-primary">Add Show Time</button>&nbsp;&nbsp;
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <hr>
+      <center>
+        <h4>Mapp Details</h4>
+      </center>
+      <table class="table">
+        <tr>
+          <th>Movie</th>
+          <th>City</th>
+          <th>Theater</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <b>{{moviemapingCtrl.movie}}</b>
+            </p>
+          </td>
+          <td>
+            <p>
+              {{moviemapingCtrl.city}}
+            </p>
+          </td>
+          <td>
+            <select ng-model="moviemapingCtrl.mtheater" name="Stheaters" id="restheater" class="form-control" multiple></select>
+          </td>
+          <td>
+            <select ng-model="moviemapingCtrl.mdate" name="sDate" id="resdate" class="form-control" multiple></select>
+          </td>
+          <td>
+            <select ng-model="moviemapingCtrl.mtime" id="restime" name="Stime" class="form-control" multiple></select>
+          </td>
+        </tr>
+      </table>
+      <center>
+        <button class="btn btn-success btn-lg " ng-click="moviemapingCtrl.MapMovie()">Save Mapping Details</button>
+      </center>
+    </div>
+  </div>
+  <hr>
+  <table class="table"  ng-repeat="s in moviemapingCtrl.ShowingMovies">
+    <tr>
+      <th>Movie</th>
+      <th>City</th>
+      <th>Theater </th>
+      <th>Show Date</th>
+      <th>Show Time</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          {{s.MovieTitle}}
+        </div>
+        <div ng-repeat="m in moviemapingCtrl.mymovies | filter: s.MovieTitle">
+          <img style="border:1px solid brown;width:100px;height:130px;" src=" http://image.tmdb.org/t/p/w500{{m.Poster}}" alt="Movie_Poster">
+        </div>
+      </td>
+      <td>
+        {{s.City}}
+      </td>
+      <td>
+        <div ng-repeat="i in s.Theater track by $index">
+          {{i}}</div>
+      </td>
+      <td>
+        <div ng-repeat="d in s.ShowDate track by $index">
+          {{d}}
+        </div>
+      </td>
+      <td>
+        <div ng-repeat="t in s.ShowTime track by $index  ">
+          {{t}}
+        </div>
+      </td>
+      <td>
+        <button class="btn btn-danger" ng-click="moviemapingCtrl.delMovie(s)"> X</button>
+      </td>
+    </tr>
+  </table>
+</div>

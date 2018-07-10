@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input type="text" placeholder="Movi Title" ng-model="findMoviCtrl.MovieName" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Year" ng-model="findMoviCtrl.Year" class="form-control">
+            </div>
+            <div class="form-group">
+                <button ng-click="findMoviCtrl.SearchMovie()" class="btn btn-success"> Find Movi </button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table" ng-show="findMoviCtrl.MovieData!=''">
+                <tr>
+                    <th>Poster</th>
+                    <th>Movie Name</th>
+                    <th>Genre</th>
+                    <th>Companies</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <td><img src="http://image.tmdb.org/t/p/w500{{findMoviCtrl.MovieData.poster_path}}" width="130" height="200"></td>
+                    <td>
+                        <h3>{{findMoviCtrl.MovieData.title}}</h3>
+                    </td>
+                    <td>
+                        <p ng-repeat="g in findMoviCtrl.MovieData.genres" style="background:blue;color:white">{{g.name}}</p>
+                    </td>
+                    <td>
+                        <p ng-repeat="c in findMoviCtrl.MovieData.production_companies">{{c.name}} , </p>
+                    </td>
+                    <td>
+                        <p> {{findMoviCtrl.MovieData.runtime}} Min.</p>
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+        <div class="form-group">
+            <button ng-click="findMoviCtrl.AddMovie()" class="btn btn-success">Add Movie  </button>
+        </div>
+
+
+    </div>
+    <!-- Showing Movies -->
+    <div class="row">
+        <div class="col-md-8">
+            <center>
+                <h3>Added Movies</h3>
+            </center>
+            <hr>
+
+            <table class="table">
+                <tr ng-repeat="m in findMoviCtrl.mymovies">
+
+                    <td><img width="200" height="150px" src="http://image.tmdb.org/t/p/w500{{m.Poster}}" alt="{{m.Title}} " style="width:50px;height:70px;">                        </td>
+                    <td>{{m.Title}}</td>
+                    
+                    <td>
+                        <p ng-repeat="g in m.Genres">{{g.name}} ,</p>
+                    </td>
+                    <td>
+                            <p ng-repeat="c in m.Company">{{c.name}} ,</p>
+                        </td>
+                   
+                    <td>
+                        {{m.RunTime}} Min
+                    </td>
+                   
+                  
+                    <td>{{m.ID}} </td>
+                    <td> <button class="btn btn-danger" ng-click="findMoviCtrl.RemoveMovie(m)"> X </button> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+</div>

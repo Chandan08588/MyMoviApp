@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+            <select class="form-control" ng-model="selectTheaterCtrl.city">
+             
+                <option> </option>
+                
+                <option ng-repeat="t in selectTheaterCtrl.Theaters" value=" {{t.City}}" > {{t.City}}</option>
+                
+                </select>
+                <select class="form-control" ng-model="theater">
+                 
+                  <option ng-repeat="t in selectTheaterCtrl.Theaters | filter : selectTheaterCtrl.city" value="{{t.Name}}:  {{t.Location}}" > {{t.Name}} {{t.Location}}</option>
+                 
+                  </select>
+                  
+                  <button ng-click="selectTheaterCtrl.bookSeat()" class="btn btn-primary"> Book Seat </button>
+                  <div> </div>
+        </div>
+        
+    </div>
+    
+    <select name="" id="tName" ng-model="selectTheaterCtrlTheater" style="visibility: hidden;">
+        <option value="{{theater}}">{{theater}}</option>
+    </select>
+    
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
